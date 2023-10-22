@@ -2,3 +2,4 @@
 
 #define WIFI_SSID       "your_SSID_placeholder"
 #define WIFI_PASSWORD   "your_PASSWORD_placeholder"
+#define DNS_NAME        "esp8266"

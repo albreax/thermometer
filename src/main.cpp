@@ -3,6 +3,7 @@
 #include <DallasTemperature.h>
 #include <ESP8266WiFi.h>
 #include <ESP8266WebServer.h>
+#include <ESP8266mDNS.h>
 
 #define ONE_WIRE_BUS D2
 
@@ -12,11 +13,12 @@ DallasTemperature sensors(&oneWire);
 // read ssid, password from config.h
 const char* ssid = WIFI_SSID;
 const char* password = WIFI_PASSWORD;
+const char* dnsName = DNS_NAME;
 
 ESP8266WebServer server(80); //Server on port 80
 
 void setupWebServer() {
-  server.on("/temperature", HTTP_GET, []() {
+  server.on("/", HTTP_GET, []() {
     sensors.requestTemperatures();
     float temp = sensors.getTempCByIndex(0);
     String tempStr = String(temp);
@@ -36,11 +38,17 @@ void setup() {
   }
   Serial.println("Connected to WiFi");
   
+  // start mDNS-Responder
+  if (MDNS.begin(dnsName)) {
+      Serial.println("MDNS responder started");
+  }
+
   sensors.begin();
   setupWebServer();
 }
 
 void loop() {
   server.handleClient();
+  MDNS.update();  // Important for mDNS-Responder
 }
 
