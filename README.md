@@ -34,3 +34,15 @@ Connect the DS18B20 sensor to the D1 Mini as follows:
 // TODO: add shematic
 
 ## Usage
+
+- Compile and upload the code to the D1 Mini.
+
+You can now read the temperature from the sensor using the following endpoint:
+
+<htto://ip-address/>
+
+OR
+
+<htto://DNS-NAME.local/>
+
+> DNS_NAME is the name you configured in the config.h file.
