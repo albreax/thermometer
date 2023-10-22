@@ -1,0 +1,4 @@
+// config.h
+
+#define WIFI_SSID       "your_SSID_placeholder"
+#define WIFI_PASSWORD   "your_PASSWORD_placeholder"
