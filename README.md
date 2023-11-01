@@ -2,7 +2,7 @@
 
 ## Description
 
-Provides a Rest endpoint to read the temperature from a DS18B20 sensor.
+This project is a simple thermometer based on the ESP8266 microcontroller. It uses the DS18B20 temperature sensor and provides the temperature via a MQTT.
 
 ## Hardware
 
