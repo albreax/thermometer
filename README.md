@@ -38,12 +38,9 @@ The configuration details are stored in a separate file `config.h`, which needs 
 
 To read the temperature values published by the ESP8266, you'll need an MQTT client that subscribes to the same topic. The MQTT client can be a separate microcontroller, or a computer running an MQTT client program.
 
-## Reading Values from the MQTT Broker
-
 To read the temperature values published by the ESP8266, a simple cURL command can be used to request data from the MQTT broker. This method assumes the MQTT broker has an HTTP interface available.
 
 ### Example: cURL Command
 
 ```bash
 curl http://[MQTT_BROKER_HTTP_INTERFACE]/[MQTT_TOPIC]
-
