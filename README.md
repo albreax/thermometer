@@ -7,6 +7,8 @@ This C++ program is tailored for the ESP8266 microcontroller, enabling it to rea
 ## Hardware Requirements
 
 - **ESP8266 WiFi Module:** A microcontroller module with WiFi capabilities.
+  > D1 Mini V3 NodeMCU ESP8266EX WLAN WIFI Module
+<https://www.az-delivery.de/en/products/d1-mini-v3>
 - **Dallas Temperature Sensor:** For example, the DS18B20 sensor.
 
 ## Software Libraries
